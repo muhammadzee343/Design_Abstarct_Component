@@ -5,7 +5,7 @@ import EyeIcon from '../Assets/icons/EyeIcon';
 import HiddenPasswordIcon from '../Assets/icons/HiddenPassword';
 
 export default function CustomTextInput(props) {
-  const [text, onChangeText] = React.useState();
+  const [value, onChangeText] = React.useState(props.value);
   const [isShowPassword, setShowPassword] = React.useState(false);
 
   return (
@@ -15,10 +15,22 @@ export default function CustomTextInput(props) {
         <TextInput
           style={styles.input}
           onChangeText={text => {
-            onChangeText: text;
+            onChangeText(text);
           }}
           placeholder={props.placeHolder}
-          value={text}
+          keyboardType={props.keyboardType}
+          value={value}
+          editable={props.isEditable}
+          maxLength={props.maxLength}
+          autoCapitalize={props.autoCapitalize}
+          autoCompleteType={props.autoCompleteType}
+          autoCorrect={props.autoCorrect}
+          autoFocus={props.autoFocus}
+          clearTextOnFocus={props.clearTextOnFocus}
+          keyboardAppearance={props.keyboardAppearance}
+          placeholderTextColor={props.placeholderTextColor}
+          secureTextEntry={props.secureTextEntry}
+          textAlign={props.textAlign}
         />
         <Ripple
           onPress={() => {

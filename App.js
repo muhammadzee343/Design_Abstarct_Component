@@ -8,16 +8,17 @@ import {
   View,
 } from 'react-native';
 import BackArrowIcon from './src/Assets/icons/BackArrow';
-import EyeIcon from './src/Assets/icons/EyeIcon';
-import CustomButton from './src/Components/CustomButton';
+import RoundButton from './src/Components/RoundButton';
 import CustomHeader from './src/Components/CustomHeader';
-import CustomImage from './src/Components/CustomImage';
-import CustomText from './src/Components/CustomText';
 import CustomTextInput from './src/Components/CustomTextInput';
 import RadioSelectOption from './src/Components/RadioSelectOption';
 import SquareButton from './src/Components/SquareButton';
+import CustomSquareButton from './src/Components/CustomSquareButton';
 
 class App extends PureComponent {
+  SquareButtOnClickAction = () => {
+    console.log('on click of square button');
+  };
   render() {
     return (
       <SafeAreaView style={{flex: 1, backgroundColor: '#fce1fc'}}>
@@ -25,27 +26,33 @@ class App extends PureComponent {
         <CustomHeader
           leftIcon={<BackArrowIcon iconColor="black" />}
           dynamicTitle="Title Text"
-          rightIcon={<SquareButton />}
+          rightIcon={
+            <SquareButton
+              text="Skip"
+              onClickAction={this.SquareButtOnClickAction}
+            />
+          }
         />
 
         <View style={{flex: 0.93}}>
-
-          <View style={styles.customImgContainer}>
-            <CustomImage
-              imgStyle={styles.logoImgStyle}
-              imgUrl={require('./src/Assets/images/logo.png')}
-            />
-          </View>
-
-          <View style={styles.customTextContainer}>
-            <CustomText contentText="Signup" textStyle={{fontSize: 20}} />
-          </View>
-
           <View style={{flex: 0.22}}>
             <CustomTextInput
               title="Email"
               placeHolder="Email"
-              rightIcon={<EyeIcon iconColor="black" />}
+              // value="abc"
+              // keyboardType="numeric"
+              // rightIcon={<EyeIcon iconColor="black" />}
+              isEditable={true}
+              // maxLength={4}
+              // autoCapitalize="characters"
+              // autoCompleteType="postal-code"
+              autoCorrect={false}
+              autoFocus={false}
+              // clearTextOnFocus={true}
+              // keyboardAppearance="light"
+              // placeholderTextColor="gray"
+              // secureTextEntry={false}
+              // textAlign="center"
             />
           </View>
 
@@ -59,9 +66,23 @@ class App extends PureComponent {
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-            <CustomButton customButtonStyle={styles.customButtonStyle} />
+            <RoundButton
+              Title="Login"
+              OnClickAction={this.SquareButtOnClickAction}
+            />
           </View>
-          
+          <View
+            style={{
+              width: '100%',
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginTop: 30
+            }}>
+            <CustomSquareButton
+              Title="Next"
+              OnClickAction={this.SquareButtOnClickAction}
+            />
+          </View>
         </View>
       </SafeAreaView>
     );
@@ -87,17 +108,6 @@ const styles = StyleSheet.create({
     flex: 0.1,
     // backgroundColor: 'red',
     // marginTop: 10,
-  },
-  customButtonStyle: {
-    height: 40,
-    width: '40%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'green',
-    backgroundColor: '#009688',
-    borderRadius: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 12,
   },
 });
 

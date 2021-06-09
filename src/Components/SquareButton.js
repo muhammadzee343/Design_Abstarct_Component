@@ -2,15 +2,16 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import Ripple from 'react-native-material-ripple';
 
-export default function SquareButton() {
+export default function SquareButton(props) {
   return (
     <View style={styles.container}>
       <Ripple
         rippleColor="gray"
         rippleDuration={1000}
         rippleOpacity={0.87}
-        style={styles.rippleStyle}>
-        <Text>Skip</Text>
+        style={styles.rippleStyle}
+        onPress={props.onClickAction}>
+        <Text>{props.text}</Text>
       </Ripple>
     </View>
   );
