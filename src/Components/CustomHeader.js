@@ -1,7 +1,7 @@
 import React from 'react';
 import {StatusBar, StyleSheet, Text, View} from 'react-native';
 
-export default function CustomHeader(props) {
+const CustomHeader = props => {
   return (
     <View style={styles.container}>
       <View style={styles.leftIconConainer}>
@@ -17,7 +17,7 @@ export default function CustomHeader(props) {
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -53,3 +53,5 @@ const styles = StyleSheet.create({
     paddingRight: 10,
   },
 });
+
+export default CustomHeader;

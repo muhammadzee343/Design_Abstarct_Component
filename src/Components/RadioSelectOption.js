@@ -1,14 +1,14 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-export default function RadioSelectOption(props) {
+const RadioSelectOption = props => {
   return (
     <View style={styles.container}>
       <Text>{props.title}</Text>
-      <View style={styles.RadioButtonStyle} />
+      <View style={styles.radioOptionStyle} />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -17,9 +17,9 @@ const styles = StyleSheet.create({
     // backgroundColor: 'gray',
     justifyContent: 'space-between',
     padding: 10,
-    marginLeft: 7
+    marginLeft: 7,
   },
-  RadioButtonStyle: {
+  radioOptionStyle: {
     height: 20,
     width: 20,
     borderColor: 'black',
@@ -27,3 +27,5 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
 });
+
+export default RadioSelectOption;

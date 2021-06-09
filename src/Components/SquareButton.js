@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import Ripple from 'react-native-material-ripple';
 
-export default function SquareButton(props) {
+const SquareButton = props => {
   return (
     <View style={styles.container}>
       <Ripple
@@ -10,12 +10,12 @@ export default function SquareButton(props) {
         rippleDuration={1000}
         rippleOpacity={0.87}
         style={styles.rippleStyle}
-        onPress={props.onClickAction}>
+        onPress={props.onSquareBtnPress}>
         <Text>{props.text}</Text>
       </Ripple>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -34,3 +34,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+
+export default SquareButton;

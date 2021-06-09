@@ -1,10 +1,9 @@
 import React from 'react';
 import {StyleSheet, Text, TextInput, View} from 'react-native';
 import Ripple from 'react-native-material-ripple';
-import EyeIcon from '../Assets/icons/EyeIcon';
 import HiddenPasswordIcon from '../Assets/icons/HiddenPassword';
 
-export default function CustomTextInput(props) {
+const CustomTextInput = props => {
   const [value, onChangeText] = React.useState(props.value);
   const [isShowPassword, setShowPassword] = React.useState(false);
 
@@ -18,19 +17,24 @@ export default function CustomTextInput(props) {
             onChangeText(text);
           }}
           placeholder={props.placeHolder}
-          keyboardType={props.keyboardType}
+          keyboardType={props.keyboardType ? props.keyboardType : 'default'}
           value={value}
-          editable={props.isEditable}
-          maxLength={props.maxLength}
-          autoCapitalize={props.autoCapitalize}
-          autoCompleteType={props.autoCompleteType}
-          autoCorrect={props.autoCorrect}
-          autoFocus={props.autoFocus}
-          clearTextOnFocus={props.clearTextOnFocus}
-          keyboardAppearance={props.keyboardAppearance}
-          placeholderTextColor={props.placeholderTextColor}
-          secureTextEntry={props.secureTextEntry}
-          textAlign={props.textAlign}
+          editable={props.isEditable ? props.isEditable : true}
+          autoCapitalize={
+            props.autoCapitalize ? props.autoCapitalize : 'sentences'
+          }
+          autoCorrect={props.autoCorrect ? props.autoCorrect : true}
+          autoFocus={props.autoFocus ? props.autoFocus : false}
+          clearTextOnFocus={
+            props.clearTextOnFocus ? props.clearTextOnFocus : false
+          }
+          keyboardAppearance={
+            props.keyboardAppearance ? props.keyboardAppearance : 'default'
+          }
+          secureTextEntry={
+            props.secureTextEntry ? props.secureTextEntry : false
+          }
+          textAlign={props.textAlign ? props.textAlign : 'left'}
         />
         <Ripple
           onPress={() => {
@@ -47,7 +51,7 @@ export default function CustomTextInput(props) {
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   input: {
@@ -57,3 +61,5 @@ const styles = StyleSheet.create({
     width: '90%',
   },
 });
+
+export default CustomTextInput;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Svg, {Path} from 'react-native-svg';
 
-function EyeIcon(props) {
+const EyeIcon = props => {
   // console.log("props in user", props.SVGStrings)
   // let size = props.size ? props.size : 40;
   return (
@@ -13,6 +13,6 @@ function EyeIcon(props) {
       />
     </Svg>
   );
-}
+};
 
 export default EyeIcon;

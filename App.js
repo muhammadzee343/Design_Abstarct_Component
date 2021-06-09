@@ -29,7 +29,7 @@ class App extends PureComponent {
           rightIcon={
             <SquareButton
               text="Skip"
-              onClickAction={this.SquareButtOnClickAction}
+              onSquareBtnPress={this.SquareButtOnClickAction}
             />
           }
         />
@@ -43,14 +43,11 @@ class App extends PureComponent {
               // keyboardType="numeric"
               // rightIcon={<EyeIcon iconColor="black" />}
               isEditable={true}
-              // maxLength={4}
               // autoCapitalize="characters"
-              // autoCompleteType="postal-code"
               autoCorrect={false}
               autoFocus={false}
               // clearTextOnFocus={true}
               // keyboardAppearance="light"
-              // placeholderTextColor="gray"
               // secureTextEntry={false}
               // textAlign="center"
             />
@@ -66,21 +63,18 @@ class App extends PureComponent {
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-            <RoundButton
-              Title="Login"
-              OnClickAction={this.SquareButtOnClickAction}
-            />
+            <RoundButton title="Login" onPress={this.SquareButtOnClickAction} />
           </View>
           <View
             style={{
               width: '100%',
               justifyContent: 'center',
               alignItems: 'center',
-              marginTop: 30
+              marginTop: 30,
             }}>
             <CustomSquareButton
-              Title="Next"
-              OnClickAction={this.SquareButtOnClickAction}
+              title="Next"
+              onPress={this.SquareButtOnClickAction}
             />
           </View>
         </View>

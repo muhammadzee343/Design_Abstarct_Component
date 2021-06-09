@@ -1,7 +1,7 @@
 import React from 'react';
 import Svg, {Path} from 'react-native-svg';
 
-function HiddenPasswordIcon(props) {
+const HiddenPasswordIcon = props => {
   // console.log("props in user", props.SVGStrings)
   // let size = props.size ? props.size : 40;
   return (
@@ -18,6 +18,6 @@ function HiddenPasswordIcon(props) {
       />
     </Svg>
   );
-}
+};
 
 export default HiddenPasswordIcon;

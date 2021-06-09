@@ -2,18 +2,18 @@ import React from 'react';
 import {StyleSheet, Text} from 'react-native';
 import Ripple from 'react-native-material-ripple';
 
-export default function RoundButton(props) {
+const RoundButton = props => {
   return (
     <Ripple
       rippleColor="gray"
       rippleDuration={1000}
       rippleOpacity={0.87}
       style={styles.roundButtonStyle}
-      onPress={props.OnClickAction}>
-      <Text style={styles.buttonStyle}>{props.Title}</Text>
+      onPress={props.onPress}>
+      <Text style={styles.buttonStyle}>{props.title}</Text>
     </Ripple>
   );
-}
+};
 
 const styles = StyleSheet.create({
   buttonStyle: {
@@ -34,3 +34,5 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
   },
 });
+
+export default RoundButton;
